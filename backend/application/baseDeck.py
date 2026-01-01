@@ -1,9 +1,10 @@
 from enums import Ability, Theater
 from unitCard import unitCard
 
+
 def get_air_cards() -> list[unitCard]:
     return [
-            # -------- AIR (1–6) --------
+            # AIR (1–6)
             unitCard(1, "Support", Theater.Air,
                      "You gain +3 strength in each adjacent theater.",
                      Ability.Passive, 1),
@@ -29,9 +30,10 @@ def get_air_cards() -> list[unitCard]:
                      Ability.No, 6),
     ]
 
+
 def get_land_cards() -> list[unitCard]:
     return [
-            # -------- LAND (7–12) --------
+            # LAND (7–12)
             unitCard(7, "Reinforce", Theater.Land,
                      "Draw a card and play it facedown to an adjacent theater.",
                      Ability.Activate, 1),
@@ -57,9 +59,10 @@ def get_land_cards() -> list[unitCard]:
                      Ability.No, 6),
     ]
 
+
 def get_sea_cards() -> list[unitCard]:
     return [
-            # -------- SEA (13–18) --------
+            # SEA (13–18)
             unitCard(13, "Transport", Theater.Sea,
                      "You may move 1 of your cards to a different theater.",
                      Ability.Activate, 1),
@@ -85,7 +88,11 @@ def get_sea_cards() -> list[unitCard]:
                      Ability.No, 6),
     ]
 
+
 class baseDeck:
+    '''
+    The base deck containing the initial 18 unit cards.
+    '''
     _deck: list[unitCard]
 
     def __init__(self):

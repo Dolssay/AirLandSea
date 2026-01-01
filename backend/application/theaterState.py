@@ -2,14 +2,20 @@ from enums import Theater
 from unitCard import unitCard
 
 class TheaterState:
+    '''
+    A state of a single theater for a player.
+    '''
+
     theater: Theater
     cards: list[unitCard]
     strength: int
+
 
     def __init__(self, theater: Theater):
         self.theater = theater
         self.cards: list[unitCard] = []
         self.strength = 0
+
 
     def add_card(self, card: unitCard):
         '''
@@ -26,6 +32,7 @@ class TheaterState:
 
         self.cards.append(card)
 
+
     def remove_card(self, index: int):
         '''
         Removes a card from the theater by index, updates total strength and card list.
@@ -40,6 +47,7 @@ class TheaterState:
             self.strength -= 2
         self.cards.remove(self.cards[index])
 
+
     def get_strength(self) -> int:
         '''
         Returns the total strength of the theater.
@@ -49,6 +57,7 @@ class TheaterState:
         '''
         return self.strength
     
+
     def get_cards(self) -> list[unitCard]:
         '''
         Returns the list of cards in the theater.
@@ -57,6 +66,7 @@ class TheaterState:
         :rtype: list[unitCard]
         '''
         return self.cards
+    
     
     def update_strength(self, added_strength: int):
         '''
