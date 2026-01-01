@@ -48,21 +48,25 @@ class player:
         return self.hand
 
 
-    def play_card(self, index: int) -> int:
+    def play_card(self, index: int, facedown: bool) -> unitCard:
         '''
         Removes a card from the player's hand and returns it.
 
         :param index: the index of the card to play
         :type index: int
+        :param facedown: whether the card is going to be played facedown
+        :type facedown: bool
 
-        :return: the played card, id
-        :rtype: int
+        :return: the played card, unitCard
+        :rtype: unitCard
         '''
         card = self.hand[index]
         self.hand.remove(card)
-        return card.id
+        card.facedown = facedown
+        card.strength = 2 if facedown else card.strength
+        return card
     
-    
+
     def add_winning_points(self, points: int):
         '''
         Adds winning points to the player.

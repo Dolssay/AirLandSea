@@ -30,3 +30,18 @@ class unitCard:
         self.facedown = False
         self.covered = False
 
+
+    def change_strength(self, new_strength: int):
+        '''
+        Changes the current strength of the card.
+
+        :param new_strength: The new strength value
+        :type new_strength: int
+        '''
+        self.strength = new_strength
+
+    def flip_card(self):
+        '''
+        Flips the card.
+        '''
+        self.facedown = not self.facedown

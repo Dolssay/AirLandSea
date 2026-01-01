@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class Theater(Enum):
-    Air = "Air"
-    Land = "Land"
-    Sea = "Sea"
+    Air = 1
+    Land = 2
+    Sea = 3
 
 
 class Ability(Enum):
@@ -13,10 +13,19 @@ class Ability(Enum):
     No = 3
 
 
-class Passive(Enum):
+class PassiveIDs(Enum):
     Support = 1
-    Aerodrome = 2
-    Containment = 3
-    CoverFire = 4
-    Escalation = 5
-    Blockade = 6
+    Aerodrome = 4
+    Containment = 5
+    CoverFire = 10
+    Escalation = 14
+    Blockade = 17
+
+class TriggerIDs(Enum):
+    Airdrop = 2
+    Manuever = (3, 9, 15)
+    Reinforce = 7
+    Ambush = 8
+    Disrupt = 11
+    Transport = 13
+    Redeploy = 16
